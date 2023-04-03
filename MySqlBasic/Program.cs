@@ -1,1 +1,3 @@
 ﻿// wipe
+
+Console.Write("");
