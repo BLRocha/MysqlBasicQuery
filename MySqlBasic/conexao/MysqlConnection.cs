@@ -14,13 +14,12 @@ namespace MySqlBasic.conexao
         private static MySqlConnection? conn = null;
         public MysqlConnection()
         {
-            conn = new MySqlConnection(builder.ConnectionString);
         }
         public async Task<MySqlConnection> GetConnection()
         {
-            if (MysqlConnection.conn != null) return conn;
+            if (conn != null) return conn;
 
-            MysqlConnection.conn = new MySqlConnection(builder.ConnectionString);
+            conn = new MySqlConnection(builder.ConnectionString);
             await conn.OpenAsync();
             Console.WriteLine("Conectando!");
             return conn;
